@@ -1,0 +1,21 @@
+{
+  "name": "demo-ui",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "bower": "^1.7.9",
+    "express": "^4.14.0",
+    "lite-server": "^2.2.2",
+    "npm-git-install": "^0.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run lite",
+    "lite": "lite-server",
+    "dev": "lite-server"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

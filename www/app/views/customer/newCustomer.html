@@ -1,0 +1,573 @@
+<link href="lib/iCheck/skins/flat/green.css" rel="stylesheet">
+<div class="">
+	<div class="clearfix"></div>
+
+	<div class="row">
+		<div class="col-md-12 col-sm-12 col-xs-12">
+			<div class="x_panel">
+				<div class="x_title">
+					<h2>New Customer </h2>
+					<ul class="nav navbar-right panel_toolbox">
+						<li>
+							<a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+						</li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+							<ul class="dropdown-menu" role="menu">
+								<li>
+									<a href="#">Settings 1</a>
+								</li>
+								<li>
+									<a href="#">Settings 2</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a class="close-link"><i class="fa fa-close"></i></a>
+						</li>
+					</ul>
+					<div class="clearfix"></div>
+				</div>
+				<div class="x_content">
+					<!-- Smart Wizard -->
+					<div id="wizard" class="form_wizard wizard_horizontal">
+						<ul class="wizard_steps">
+							<li>
+								<a href="#step-1"> <span class="step_no">1</span> <span class="step_descr"> Step 1
+									<br />
+									<small>Search ID</small> </span> </a>
+							</li>
+							<li>
+								<a href="#step-2"> <span class="step_no">2</span> <span class="step_descr"> Step 2
+									<br />
+									<small>Consent</small> </span> </a>
+							</li>
+							<li>
+								<a href="#step-3"> <span class="step_no">3</span> <span class="step_descr"> Step 3
+									<br />
+									<small>Create ID</small> </span> </a>
+							</li>
+							<li>
+								<a href="#step-4"> <span class="step_no">4</span> <span class="step_descr"> Step 4
+									<br />
+									<small>CDD</small> </span> </a>
+							</li>
+						</ul>
+						<div>
+							<div id="step-1" style="min-height: 50vh">
+								<div class="loading" ng-if="showLoader"></div>
+								<form class="form-horizontal form-label-left">
+									<div class="form-group">
+										<label class="control-label col-md-3 col-sm-3 col-xs-12" for="selectedId">Search Type <span class="required">*</span> </label>
+										<div class="col-md-6 col-sm-6 col-xs-12">
+											<select class="form-control" name="selectedId" id="selectedId"
+											ng-options="option.name for option in searchData.idTypeOptions track by option.id"
+											ng-model="searchData.selectedidTypeOption" ng-change="onIdTypeChange(searchData.selectedidTypeOption)"></select>
+										</div>
+									</div>
+									<div ng-if="showNaturalform">
+										<div class="form-group">
+											<label class="control-label col-md-3 col-sm-3 col-xs-12" for="naturalFirstName">First Name <span class="required">*</span> </label>
+											<div class="col-md-6 col-sm-6 col-xs-12">
+												<input type="text" id="naturalFirstName" name="naturalFirstName" required="required" class="form-control col-md-7 col-xs-12" ng-model="searchData.firstName">
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="control-label col-md-3 col-sm-3 col-xs-12" for="naturalLastName">Last Name <span class="required">*</span> </label>
+											<div class="col-md-6 col-sm-6 col-xs-12">
+												<input type="text" id="naturalLastName" name="naturalLastName" required="required" class="form-control col-md-7 col-xs-12" ng-model="searchData.lastName">
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="naturalDob" class="control-label col-md-3 col-sm-3 col-xs-12">Date of birth</label>
+											<div class="col-md-6 col-sm-6 col-xs-12">
+												<input id="naturalDob" class="form-control col-md-7 col-xs-12" type="date" name="naturalDob" ng-model="searchData.dob">
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="control-label col-md-3 col-sm-3 col-xs-12" for="naturalSelectedCountry">Country Of Birth <span class="required">*</span> </label>
+											<div class="col-md-6 col-sm-6 col-xs-12">
+												<select class="form-control" name="naturalSelectedCountry" id="naturalSelectedCountry"
+												ng-options="option.name for option in searchData.countries track by option.id"
+												ng-model="searchData.selectedCountry"></select>
+											</div>
+										</div>
+									</div>
+									<div ng-if="!showNaturalform">
+										<div class="form-group">
+											<label class="control-label col-md-3 col-sm-3 col-xs-12" for="legalCompanyName">Company Name <span class="required">*</span> </label>
+											<div class="col-md-6 col-sm-6 col-xs-12">
+												<input type="text" id="legalCompanyName" name="legalCompanyName" required="required" class="form-control col-md-7 col-xs-12" ng-model="searchData.firstName">
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="control-label col-md-3 col-sm-3 col-xs-12" for="registrationDate">Registration Date <span class="required">*</span> </label>
+											<div class="col-md-6 col-sm-6 col-xs-12">
+												<input type="text" id="registrationDate" name="legalRegistrationDate" required="required" class="form-control col-md-7 col-xs-12" ng-model="searchData.dob">
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="legalCountry" class="control-label col-md-3 col-sm-3 col-xs-12">Register Country</label>
+											<div class="col-md-6 col-sm-6 col-xs-12">
+												<select class="form-control" name="legalCountry" id="legalCountry"
+												ng-options="option.name for option in searchData.countries track by option.id"
+												ng-model="searchData.selectedCountry"></select>
+											</div>
+										</div>
+									</div>
+									<button class="btn col-md-4 col-md-offset-4 checkBtn" ng-click="checkExist()">
+										Check
+									</button>
+								</form>
+
+							</div>
+							<div id="step-2">
+								<div class="loading" ng-if="showLoader"></div>
+								<div ng-if="consent==false">
+									<h2 class="StepTitle">Consent</h2>
+
+									<p>
+										Please ask customer to agree to Terms and Conditions below
+									</p>
+									<p>
+										1. Terms and Conditions
+									</p>
+									1.1  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+									<br/>
+
+									1.2  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+									<br/>
+
+									1.3  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+									<br/>
+									<button class="btn btn-success" type="button"
+									ng-click="approve()">
+										Agrees
+									</button>
+									<button class="btn btn-dark" type="button"
+									ng-click="reject()">
+										Disagrees
+									</button>
+								</div>
+								<div ng-if="consent==true">
+									<h2 class="StepTitle">Consent</h2>
+									<br/>
+									This customer  has already registered  his own profile  and agreed  to share his information on
+									the blockchain.
+									<br/>
+									<button id="profileButton" class="btn confirmBtn" type="button"
+									ng-click="customerProfilePage(searchData)">
+										Profile
+									</button>
+								</div>
+							</div>
+							<div id="step-3">
+								<!--<div ng-if="consent==false">-->
+									<div class="loading" ng-if="showLoader"></div>
+								<form class="form-horizontal form-label-left">
+									<div class="form-group">
+										<label class="control-label col-md-3 col-sm-3 col-xs-12" for="selectedId">ID Type <span class="required">*</span> </label>
+										<div class="col-md-6 col-sm-6 col-xs-12">
+											<select class="form-control" name="selectedId" id="verification-selectedId"
+											ng-options="option.name for option in verificationdata.idTypeOptions track by option.id"
+											ng-model="verificationdata.selectedidTypeOption"></select>
+										</div>
+									</div>
+									<div ng-if="verificationdata.selectedidTypeOption.id == 5">
+										<div class="form-group">
+											<label class="control-label col-md-3 col-sm-3 col-xs-12" for="registrationCountry">Registration Country <span class="required">*</span> </label>
+											<div class="col-md-6 col-sm-6 col-xs-12">
+												<select class="form-control" name="registrationCountry" id="registrationCountry"
+												ng-options="option.name for option in verificationdata.countries track by option.id"
+												ng-model="verificationdata.selectedCountry"></select>
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="control-label col-md-3 col-sm-3 col-xs-12" for="regNumber">Registration Number <span class="required">*</span> </label>
+											<div class="col-md-6 col-sm-6 col-xs-12">
+												<input type="text" id="regNumber" name="regNumber" required="required" placeholder="197501566C" class="form-control col-md-7 col-xs-12" ng-model="verificationdata.registNumber">
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="regDate" class="control-label col-md-3 col-sm-3 col-xs-12">Registration Date</label>
+											<div class="col-md-6 col-sm-6 col-xs-12">
+												<input id="regDate" class="form-control col-md-7 col-xs-12" type="date" name="regDate" ng-model="verificationdata.dob">
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="control-label col-md-3 col-sm-3 col-xs-12" for="ValidDate">Valid Till Date <span class="required">*</span> </label>
+											<div class="col-md-6 col-sm-6 col-xs-12">
+												<input id="validDate" class="form-control col-md-7 col-xs-12" type="date" placeholder="yyyy-mm-dd" name="validDate" ng-model="verificationdata.validDate">
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="control-label col-md-3 col-sm-3 col-xs-12" for="address">Address <span class="required">*</span> </label>
+											<div class="col-md-6 col-sm-6 col-xs-12">
+												<input id="address" class="form-control col-md-7 col-xs-12" type="text" name="address" ng-model="verificationdata.address">
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="control-label col-md-3 col-sm-3 col-xs-12" for="postalCode">Postal Code <span class="required">*</span> </label>
+											<div class="col-md-6 col-sm-6 col-xs-12">
+												<input id="postalCode" class="form-control col-md-7 col-xs-12" type="text" name="postalCode" ng-model="verificationdata.postcode">
+											</div>
+										</div>
+									</div>
+									<div ng-if="verificationdata.selectedidTypeOption.id == 1">
+										<div class="form-group">
+											<label class="control-label col-md-3 col-sm-3 col-xs-12" for="selectedColor">Color <span class="required">*</span> </label>
+											<div class="col-md-6 col-sm-6 col-xs-12">
+												<select class="form-control" name="selectedColor" id="selectedColor"
+												ng-options="option.name for option in verificationdata.singaporeIdCardColours track by option.id"
+												ng-model="verificationdata.selectedIdCardColor"></select>
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="control-label col-md-3 col-sm-3 col-xs-12" for="IdCardNumber">Card Number <span class="required">*</span> </label>
+											<div class="col-md-6 col-sm-6 col-xs-12">
+												<input type="text" id="IdCardNumber" name="IdCardNumber" required="required" class="form-control col-md-7 col-xs-12" ng-model="verificationdata.idCardNumber">
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="selectedSex" class="control-label col-md-3 col-sm-3 col-xs-12">Sex</label>
+											<div class="col-md-6 col-sm-6 col-xs-12">
+												<select class="form-control" name="selectedSex" id="selectedSex"
+												ng-options="option.name for option in verificationdata.sex track by option.id"
+												ng-model="verificationdata.selectedSex"></select>
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="control-label col-md-3 col-sm-3 col-xs-12" for="nric-dob">Date of birth <span class="required">*</span> </label>
+											<div class="col-md-6 col-sm-6 col-xs-12">
+												<input id="nric-dob" class="form-control col-md-7 col-xs-12" type="date" placeholder="yyyy-mm-dd" name="nric-dob" ng-model="verificationdata.dob">
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="control-label col-md-3 col-sm-3 col-xs-12" for="nric-selectedCountry">Country Of Birth <span class="required">*</span> </label>
+											<div class="col-md-6 col-sm-6 col-xs-12">
+												<select class="form-control" name="nric-selectedCountry" id="nric-selectedCountry"
+												ng-options="option.name for option in verificationdata.countries track by option.id"
+												ng-model="verificationdata.selectedCountry"></select>
+											</div>
+										</div>
+									</div>
+									<div ng-if="verificationdata.selectedidTypeOption.id == 2">
+										<div class="form-group">
+											<label class="control-label col-md-3 col-sm-3 col-xs-12" for="birthRegistrationNumber">Registration Number <span class="required">*</span> </label>
+											<div class="col-md-6 col-sm-6 col-xs-12">
+												<input id="birthRegistrationNumber" class="form-control col-md-7 col-xs-12" type="text" name="birthRegistrationNumber" ng-model="verificationdata.birthRegNumber">
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="control-label col-md-3 col-sm-3 col-xs-12" for="birth-sex">Sex <span class="required">*</span> </label>
+											<div class="col-md-6 col-sm-6 col-xs-12">
+												<select class="form-control" name="birth-sex" id="birth-sex"
+												ng-options="option.name for option in verificationdata.sex track by option.id"
+												ng-model="verificationdata.selectedSex"></select>
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="birth-date" class="control-label col-md-3 col-sm-3 col-xs-12">DateTime of birth</label>
+											<div class="col-md-6 col-sm-6 col-xs-12">
+												<input id="birth-date" class="form-control col-md-7 col-xs-12" type="datetime" name="birth-date" ng-model="verificationdata.dob">
+											</div>
+										</div>
+										<p>
+											Place Of Birth
+										</p>
+										<div class="form-group">
+											<label class="control-label col-md-3 col-sm-3 col-xs-12" for="hospitalName">Hospital Name <span class="required">*</span> </label>
+											<div class="col-md-6 col-sm-6 col-xs-12">
+												<input id="hospitalName" class="form-control col-md-7 col-xs-12" type="text" name="hospitalName" ng-model="verificationdata.hospitalName">
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="control-label col-md-3 col-sm-3 col-xs-12" for="cityName">City Name <span class="required">*</span> </label>
+											<div class="col-md-6 col-sm-6 col-xs-12">
+												<input id="cityName" class="form-control col-md-7 col-xs-12" type="text" name="cityName" ng-model="verificationdata.cityName">
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="control-label col-md-3 col-sm-3 col-xs-12" for="cityName">State Name <span class="required">*</span> </label>
+											<div class="col-md-6 col-sm-6 col-xs-12">
+												<input id="stateName" class="form-control col-md-7 col-xs-12" type="text" name="stateName" ng-model="verificationdata.stateName">
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="control-label col-md-3 col-sm-3 col-xs-12" for="birth-selectedCountry">Country Of Birth<span class="required">*</span> </label>
+											<div class="col-md-6 col-sm-6 col-xs-12">
+												<select class="form-control" name="birth-selectedCountry"
+												ng-options="option.name for option in verificationdata.countries track by option.id"
+												ng-model="verificationdata.selectedCountry"></select>
+											</div>
+										</div>
+									</div>
+									<div ng-if="verificationdata.selectedidTypeOption.id == 3">
+										<div class="form-group">
+											<label class="control-label col-md-3 col-sm-3 col-xs-12" for="passportNumber">Passport Number <span class="required">*</span> </label>
+											<div class="col-md-6 col-sm-6 col-xs-12">
+												<input type="text" id="passportNumber" name="passportNumber" required="required" class="form-control col-md-7 col-xs-12" ng-model="verificationdata.passportNumber">
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="passport-selectedSex" class="control-label col-md-3 col-sm-3 col-xs-12">Sex</label>
+											<div class="col-md-6 col-sm-6 col-xs-12">
+												<select class="form-control" name="passport-selectedSex" id="passport-selectedSex"
+												ng-options="option.name for option in verificationdata.sex track by option.id"
+												ng-model="verificationdata.selectedSex"></select>
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="control-label col-md-3 col-sm-3 col-xs-12" for="passport-dob">Date of birth <span class="required">*</span> </label>
+											<div class="col-md-6 col-sm-6 col-xs-12">
+												<input id="passport-dob" class="form-control col-md-7 col-xs-12" type="date" placeholder="yyyy-mm-dd" name="passport-dob" ng-model="verificationdata.dob">
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="control-label col-md-3 col-sm-3 col-xs-12" for="placeOfIssue">Place Of Issue <span class="required">*</span> </label>
+											<div class="col-md-6 col-sm-6 col-xs-12">
+												<input type="text" id="placeOfIssue" name="placeOfIssue" required="required" class="form-control col-md-7 col-xs-12" ng-model="verificationdata.placeOfIssue">
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="control-label col-md-3 col-sm-3 col-xs-12" for="doe">Date Of Expiry <span class="required">*</span> </label>
+											<div class="col-md-6 col-sm-6 col-xs-12">
+												<input id="doe" class="form-control col-md-7 col-xs-12" type="text" placeholder="yyyy-mm-dd" name="doe" ng-model="verificationdata.doe">
+											</div>
+										</div>
+									</div>
+								</form>
+								<button class="btn col-md-4 col-md-offset-4 checkBtn" ng-click="open()">
+									Save
+								</button>
+								<!--</div>-->
+								<br/>
+								<div class="clearfix"></div>
+								<div class="table-responsive proofTable">
+									<div class="loading" ng-if="showLoader"></div>
+									<table id="mytable" class="table table-striped jambo_table bulk_action">
+										<thead>
+											<tr class="headings">
+												<th>
+												<input type="checkbox" id="check-all" class="flat">
+												</th>
+												<th class="column-title">Type </th>
+												<th class="column-title">Valid Till Date </th>
+												<th class="column-title">State </th>
+												<th class="bulk-actions" colspan="7"><a class="antoo" style="color:#fff; font-weight:500;">Bulk Actions ( <span class="action-cnt"> </span> ) <i class="fa fa-chevron-down"></i></a></th>
+											</tr>
+										</thead>
+										<tbody>
+
+											<tr ng-repeat="x in table">
+												<td><!--<input type="checkbox" class="checkthis" ng-model="x.selected"/>												-->
+												<input type="checkbox" class="flat" name="table_records" ng-model="x.selected">
+												</td>
+												<td>{{ x.Type }}</td>
+												<td>{{ x.ValidTillDate }}</td>
+												<td>{{ x.State }}</td>
+											</tr>
+										</tbody>
+									</table>
+									<button type="button" class="btn btn-dark" ng-click="startCDD()" ng-if="selectedItems>=2">
+										Start CDD
+									</button>
+									<div class="clearfix"></div>
+								</div>
+							</div>
+							<div id="step-4" style="min-height: 50vh">
+								<div class="loading" ng-if="showLoader"></div>
+								<div ng-if="!dialogData.formEnabled">
+									<h2 class="StepTitle">Question: {{dialogData.question}}</h2>
+									<p>
+										Please select your answer to the above question accordingly
+									</p>
+									<form class="form-horizontal form-label-left">
+										<div class="form-group">
+											<label class="control-label col-md-3 col-sm-3 col-xs-12" for="answer">Answer <span class="required">*</span> </label>
+											<div class="col-md-6 col-sm-6 col-xs-12">
+												<select class="form-control" name="answer" id="answer"
+												ng-options="option.name for option in dialogData.answerOptions track by option.id"
+												ng-model="dialogData.selectedAnswer"></select>
+											</div>
+										</div>
+										<div>
+											<button class="btn col-md-4 col-md-offset-4 checkBtn" ng-click="checkAnswer()" ng-if="!lastQuestion">
+												Next
+											</button>
+											<!--
+											<button class="btn col-md-4 col-md-offset-4 checkBtn" ng-click="customerProfilePage()" ng-if="lastQuestion">
+											Finish
+											</button>-->
+
+										</div>
+
+									</form>
+
+								</div>
+								<div ng-if="dialogData.formEnabled">
+									<h2>Customer Due Diligence Form</h2>
+									<form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+										<div class="form-group">
+											<label class="control-label col-md-3 col-sm-3 col-xs-12" for="alias">Alias <span class="required">*</span> </label>
+											<div class="col-md-6 col-sm-6 col-xs-12">
+												<input type="text" id="alias" required="required" class="form-control col-md-7 col-xs-12" ng-model="dialogData.alias">
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="control-label col-md-3 col-sm-3 col-xs-12" for="nationality">Country of Registration <span class="required">*</span> </label>
+											<div class="col-md-6 col-sm-6 col-xs-12">
+												<input type="text" id="nationality" name="nationality" required="required" class="form-control col-md-7 col-xs-12" ng-model="dialogData.nationality">
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="contactNo" class="control-label col-md-3 col-sm-3 col-xs-12">Contact Number</label>
+											<div class="col-md-6 col-sm-6 col-xs-12">
+												<input id="contactNo" class="form-control col-md-7 col-xs-12" type="text" name="contactNo" ng-model="dialogData.contactNo" ng-model="data.address1">
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="address" class="control-label col-md-3 col-sm-3 col-xs-12">Address</label>
+											<div class="col-md-6 col-sm-6 col-xs-12">
+												<input id="address" class="form-control col-md-7 col-xs-12" type="text" name="address" ng-model="dialogData.address1">
+											</div>
+										</div>
+										<div class="ln_solid"></div>
+										<div class="row">
+											<div class="col-md-55" ng-show="dialogData.NRIC">
+												<div class="thumbnail">
+													<div class="image view view-first">
+														<img style="width: 100%; display: block;" src="../resources/assets/profile/nric_img.jpg" alt="image" />
+														<div class="mask">
+															<p>
+																NRIC Document
+															</p>
+															<div class="tools tools-bottom">
+																<div style="height:0px;overflow:hidden"><input id="filepath1" type="file" file-model="myFile" ng-model="filepath1"/></div>
+																<i class="fa fa-link" ng-click="chooseNric()"></i>
+																<a href="#"><i class="fa fa-pencil"></i></a>
+																<a href="#"><i class="fa fa-times"></i></a>
+															</div>
+														</div>
+													</div>
+													<div class="caption">
+														<p>
+														NRIC Document
+														</p>
+													</div>
+													
+												</div>
+											</div>
+											<div class="col-md-55" ng-show="dialogData.birthCert">
+												<div class="thumbnail">
+													<div class="image view view-first">
+														<img style="width: 100%; display: block;" src="../resources/assets/profile/registrationDoc_icon.jpg" alt="image" />
+														<div class="mask">
+															<p>
+																Registration Document
+															</p>
+															<div class="tools tools-bottom">
+																<div style="height:0px;overflow:hidden"><input id="filepath2" type="file" file-model="myFile" ng-model="filepath2"/></div>
+																<i class="fa fa-link" ng-click="chooseregDoc()"></i>
+																<a href="#"><i class="fa fa-pencil"></i></a>
+																<a href="#"><i class="fa fa-times"></i></a>
+															</div>
+														</div>
+													</div>
+													<div class="caption">
+														<p>
+														Registration Document
+														</p>
+													</div>
+													
+												</div>
+											</div>
+											<div class="col-md-55" ng-show="dialogData.passport">
+												<div class="thumbnail">
+													<div class="image view view-first">
+														<img style="width: 100%; display: block;" src="../resources/assets/profile/article_of_association_icon.png" alt="image" />
+														<div class="mask">
+															<p>
+																Article of Association
+															</p>
+															<div class="tools tools-bottom">
+																<div style="height:0px;overflow:hidden"><input id="filepath3" type="file" file-model="myFile" ng-model="filepath3"/></div>
+																<i class="fa fa-link" ng-click="choosePassport()"></i>
+																<a href="#"><i class="fa fa-pencil"></i></a>
+																<a href="#"><i class="fa fa-times"></i></a>
+															</div>
+														</div>
+													</div>
+													<div class="caption">
+														<p>
+														Article of Association
+														</p>
+													</div>
+													
+												</div>
+											</div>
+											<div class="col-md-55" ng-show="dialogData.proofAddress">
+												<div class="thumbnail">
+													<div class="image view view-first">
+														<img style="width: 100%; display: block;" src="../resources/assets/profile/declaration-of-ownership.png" alt="image" />
+														<div class="mask">
+															<p>
+																Ownership Control Document
+															</p>
+															<div class="tools tools-bottom">
+																<div style="height:0px;overflow:hidden"><input id="filepath4" type="file" file-model="myFile" ng-model="filepath4"/></div>
+																<i class="fa fa-link" ng-click="chooseAddressProof()"></i>
+																<a href="#"><i class="fa fa-pencil"></i></a>
+																<a href="#"><i class="fa fa-times"></i></a>
+															</div>
+														</div>
+													</div>
+													<div class="caption">
+														<p>
+														Ownership Control Document
+														</p>
+													</div>
+													
+												</div>
+											</div>
+										</div>
+											
+										
+										<div class="form-group">
+											<div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+												<button type="submit" class="btn btn-primary">
+													Cancel
+												</button>
+												<button type="submit" class="btn btn-success" ng-click="submit()">
+													Submit
+												</button>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+							<!-- End SmartWizard Content -->
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+<script src="lib/jQuery-Smart-Wizard/js/jquery.smartWizard.js"></script>
+<script>
+	$(document).ready(function() {
+		$('#wizard').smartWizard({
+			keyNavigation : false,
+			enableAllSteps : false,
+			noForwardJumping : true
+
+		});
+
+		$('.buttonNext').addClass('btn btn-success').attr('id', 'next').hide();
+		$('.buttonPrevious').addClass('btn btn-primary').attr('id', 'prev').hide();
+		$('.buttonFinish').addClass('btn btn-default').hide();
+	});
+</script>
+<!-- /jQuery Smart Wizard -->

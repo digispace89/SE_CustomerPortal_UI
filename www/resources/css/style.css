@@ -1,0 +1,385 @@
+@font-face {
+	font-family: SFCompactDisplayThin;
+	src: url("../fonts/SF-Compact-Display-Thin.otf") format("opentype");
+}
+@font-face {
+	font-family: SFUIDisplayRegular;
+	src: url("../fonts/SF-UI-Display-Regular.otf") format("opentype");
+}
+@font-face {
+	font-family: SFUIDisplayThin;
+	src: url("../fonts/SF-UI-Display-Thin.otf") format("opentype");
+}
+@font-face {
+	font-family: SFUIDisplayLight;
+	src: url("../fonts/SF-UI-Display-Light.otf") format("opentype");
+}
+@font-face {
+	font-family: SFUIDisplayMedium;
+	src: url("../fonts/SF-UI-Display-Medium.otf") format("opentype");
+}
+@font-face {
+	font-family: SFUITextBold;
+	src: url("../fonts/SF-UI-Text-Bold.otf") format("opentype");
+}
+@font-face {
+	font-family: SFUITextLight;
+	src: url("../fonts/SF-UI-Text-Light.otf") format("opentype");
+}
+@font-face {
+	font-family: SFUITextRegular;
+	src: url("../fonts/SF-UI-Text-Regular.otf") format("opentype");
+}
+@font-face {
+	font-family: SFUITextSemibold;
+	src: url("../fonts/SF-UI-Text-Semibold.otf") format("opentype");
+}
+body {
+
+	/*style from bootstrap*/
+
+	font-family: 'Open Sans', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	color: #9d9892;
+	line-height: 30px;
+	text-align: center;
+	/*style from bootstrap*/
+}
+
+.nav {
+	padding-right: 2%;
+}
+
+/*custom css*/
+.login-controller-top {
+	width: 45%;
+	text-align: center;
+	margin: 0% auto;
+	padding: 2% 0 0 0;
+}
+
+.customerList {
+	background-color: #FFFFFF;
+	border: 2px solid #CCCCCC;
+	border-radius: 5px;
+	text-align: left;
+}
+
+ul {
+	list-style-type: none;
+}
+
+#newButton {
+	margin-bottom: 10px;
+	margin: 10px;
+}
+.titlebar {
+	margin-top: -20px; /*For overriding bootstrap h3*/
+}
+/*style from bootstrap*/
+
+/*
+ body {
+ background: #d9d7cb;
+ font-family: 'Open Sans', sans-serif;
+ font-size: 16px;
+ font-weight: 400;
+ color: #9d9892;
+ line-height: 30px;
+ text-align: center;
+ }
+ */
+
+strong {
+	font-weight: 600;
+}
+
+a, a:hover, a:focus {
+	color: #d05a4e;
+	text-decoration: none;
+	-o-transition: all .3s;
+	-moz-transition: all .3s;
+	-webkit-transition: all .3s;
+	-ms-transition: all .3s;
+	transition: all .3s;
+}
+
+/*
+ h1, h2 {
+ margin-top: 10px;
+ font-size: 30px;
+ font-weight: 600;
+ color: #615c58;
+ line-height: 42px;
+ }*/
+
+/*
+ h3 {
+ font-size: 22px;
+ font-weight: 300;
+ color: #615c58;
+ line-height: 30px;
+ }
+ */
+
+img {
+	max-width: 100%;
+}
+
+::-moz-selection {
+	background: #d05a4e;
+	color: #fff;
+	text-shadow: none;
+}
+::selection {
+	background: #d05a4e;
+	color: #fff;
+	text-shadow: none;
+}
+
+/***** Top content *****/
+
+.inner-bg {
+	padding: 40px 0 10px 0;
+}
+
+.top-content h1 {
+	color: #615c58;
+}
+
+.top-content .description {
+	margin: 20px 0 10px 0;
+	color: #fff;
+}
+
+.top-content .description a {
+	color: #fff;
+	border-bottom: 2px dotted #fff;
+}
+.top-content .description a:hover, .top-content .description a:focus {
+	border: 0;
+}
+
+.top-content .top-big-link {
+	margin-top: 35px;
+}
+
+.form-box {
+	padding-top: 40px;
+}
+
+.form-top {
+	padding: 25px 25px 15px 25px;
+	background: #f7f4ed;
+	text-align: left;
+}
+
+.form-top h3 {
+	margin-top: 0;
+}
+
+.form-bottom {
+	padding: 25px 25px 30px 25px;
+	background: #ebe6e0;
+	text-align: left;
+}
+
+.form-bottom form textarea {
+	height: 100px;
+}
+
+.form-bottom form .input-error {
+	border-color: #d05a4e;
+}
+
+/***** Media queries *****/
+
+@media (min-width: 992px) and (max-width: 1199px) {
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+}
+
+@media (max-width: 767px) {
+
+	.inner-bg {
+		padding: 40px 0 110px 0;
+	}
+
+}
+
+/*overriding bootstrap of form*/
+label {
+	font-weight: 100 !important;
+}
+p {
+	font-weight: 700;
+	text-align: center;
+}
+
+.footerLeft {
+	font-family: SFUIDisplay-Light;
+	font-size: 11px;
+	color: #9B9B9B;
+	letter-spacing: 0px;
+}
+
+.footerRight {
+	font-family: SFUIDisplay-Bold;
+	font-size: 10px;
+	color: #176190;
+	letter-spacing: 0px;
+	margin-right: 21px;
+}
+.footer {
+	bottom: -4px;
+	height: 40px !important;
+	position: fixed;
+	width: 100%;
+}
+
+.footerMargin {
+	border: 1px solid #D8D9DA;
+}
+.heading {
+	font-family: SFUIDisplayLight;
+	font-size: 36px;
+	color: #176190;
+	letter-spacing: 0px;
+	line-height: 50px;
+}
+
+.loading {
+	background: rgba(0,0,0,0.35) url("../assets/common/ajax-spinner.gif") center center no-repeat;
+	height: 100%;
+	left: 0%;
+	position: fixed;
+	top: 0%;
+	width: 100%;
+	z-index: 10000;
+}
+
+/*New UI*/
+/*Id proof*/
+.proofTable {
+	min-height: 200px;
+	/*	margin-top : 40px;*/
+}
+
+#tableHeader {
+	background: #415466;
+	border-radius: 6px;
+	font-family: SFUITextSemibold;
+	font-size: 16px;
+	color: #FFFFFF;
+	letter-spacing: 0px;
+}
+
+#profileButton {
+	margin-top: 30px;
+}
+
+.caption_font {
+	font-size: 95%;
+}
+
+#viewLink:hover {
+	text-decoration: underline;
+}
+
+/*Profile*/
+
+.alignRight {
+	margin-right: 27px;
+	text-align: right;
+}
+.circleDiv {
+	position: relative;
+	margin-left: 35%;
+}
+.circle {
+	background: green none repeat scroll 0 0;
+	border: 3px solid #fcfcfc;
+	border-radius: 50%;
+	display: block;
+	height: 1.3em;
+	/* left: -1.5em; */
+	/* position: absolute; */
+	/* top: 0.8em; */
+	width: 1.3em;
+	float: left;
+	display: inline-block;
+	margin-right: 7%;
+	z-index: 10;
+}
+.redCircle {
+	background: red none repeat scroll 0 0;
+	border: 3px solid #fcfcfc;
+	border-radius: 50%;
+	display: block;
+	height: 1.3em;
+	/* left: -1.5em; */
+	/* position: absolute; */
+	/* top: 0.8em; */
+	width: 1.3em;
+	float: left;
+	display: inline-block;
+	margin-right: 7%;
+	z-index: 10;
+}
+.whiteCircle {
+	background: lightgrey none repeat scroll 0 0;
+	border: 3px solid #fcfcfc;
+	border-radius: 50%;
+	display: block;
+	height: 1.3em;
+	/* left: -1.5em; */
+	/* position: absolute; */
+	/* top: 0.8em; */
+	width: 1.3em;
+	float: left;
+	display: inline-block;
+	margin-right: 7%;
+	z-index: 10;
+}
+
+.circle:last-child {
+	margin-right: -3px;
+}
+
+.whiteCircle:last-child {
+	margin-right: -3px;
+}
+
+.sendDocs {
+	margin-left: 5rem;
+	margin-top: 1rem;
+}
+
+#sendDocs {
+	margin-top: 1rem;
+}
+
+#revoke {
+	margin-left: 77%;
+	background: #f5a623 none repeat scroll 0 0;
+}
+
+.app_rej {
+	margin-left: -3px;
+	margin-right: 10px;
+	width: 80%;
+}
+
+#approve {
+	background: #7ed321 none repeat scroll 0 0
+}
+
+#reject {
+	background: #f15555 none repeat scroll 0 0;
+}
+
+
+
+

@@ -1,0 +1,44 @@
+{
+  "name": "demo-ui",
+  "description": "",
+  "main": "index.js",
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "www/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-bootstrap": "^2.1.4",
+    "angular-translate": "^2.12.1",
+    "angular-translate-loader-static-files": "^2.12.1",
+    "angular-ui-router": "0.2.13",
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.1.1",
+    "moment": "^2.17.0",
+    "restangular": "^1.5.2",
+    "animate.css": "^3.5.2",
+    "font-awesome": "^4.7.0",
+    "datatables.net": "^1.10.11",
+    "datatables.net-bs": "^1.10.11",
+    "datatables.net-buttons": "^1.1.2",
+    "datatables.net-buttons-bs": "^1.1.2",
+    "datatables.net-responsive": "^2.0.2",
+    "datatables.net-responsive-bs": "^2.0.2",
+    "datatables.net-scroller": "^1.4.1",
+    "datatables.net-scroller-bs": "^1.4.1",
+    "angular-datatables": "^0.5.5",
+    "jQuery-Smart-Wizard": "^3.3.1",
+    "morris.js": "^0.5.1",
+    "raphael": "^2.2.7",
+    "iCheck": "icheck#^1.0.2"
+  },
+  "resolutions": {
+    "moment": ">=2.9.0"
+  }
+}
