@@ -7,7 +7,7 @@ angular.module('demo').factory('loginService', function($state,commonService) {
 		getAuthToken : function(username, password) {
 			var offlineLoginData;
 			serverUsername = "test";
-			serverPassword = "test"
+			serverPassword = "test";
 			if(serverUsername === username && serverPassword === password) {
 				localStorage.setItem("loginstatus", JSON.stringify(true));
 				commonService.hideLoader();
@@ -18,6 +18,6 @@ angular.module('demo').factory('loginService', function($state,commonService) {
 			}
 
 		},
-	}
+	};
 	return login;
 });

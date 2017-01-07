@@ -64,7 +64,7 @@ function customerCtrl($scope, $state, customerDetailsService,dialogManagerServic
         $scope.searchData.firstName = "";
 		$scope.searchData.lastName = "";
 		$scope.searchData.dob = "";
-	}
+	};
     
     $scope.checkExist = function() {
     	$scope.showLoader=true;
@@ -94,7 +94,7 @@ function customerCtrl($scope, $state, customerDetailsService,dialogManagerServic
         		/*proofUpload();*/
         	}
         });
-    }
+    };
     
     /*Create Id*/
     $scope.verificationdata = {
@@ -335,7 +335,7 @@ function customerCtrl($scope, $state, customerDetailsService,dialogManagerServic
 			return {
 				id : (index + 1).toString(),
 				name : cur.action_display_text
-			}
+			};
 		});
 		$scope.dialogData.answerOptions = answers;
 		return true;
@@ -344,7 +344,7 @@ function customerCtrl($scope, $state, customerDetailsService,dialogManagerServic
     function init() {
 		$scope.showLoader = true;
 		var payload = {
-		}
+		};
 		dialogManagerService.firstQuest(payload, function(cb) {
 			if( typeof cb.data != "undefined" && cb.data != "" && cb.data != null) {
 				var success = updateQuestionAnswers(cb.data);
