@@ -11,13 +11,13 @@
 							<form>
 								<h1>Login Form</h1>
 								<div>
-									<input type="text" class="form-control" placeholder="Email" required="" ng-model="data.email" />
+									<input type="text" class="form-control" placeholder="Email" required="required" ng-model="data.email"/>
 								</div>
 								<div>
-									<input type="password" class="form-control" placeholder="Password" required="" ng-model="data.password"/>
+									<input type="password" class="form-control" placeholder="Password" required="required" ng-model="data.password"/>
 								</div>
 								<div>
-									<a class="btn btn-default submit" ng-click="Login()">Log in</a>
+									<button class="btn btn-default submit" ng-click="Login()">Log in</button>
 									<a class="reset_pass" href="#">Lost your password?</a>
 								</div>
 

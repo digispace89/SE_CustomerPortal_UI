@@ -8,14 +8,14 @@ function mainCtrl($scope, $state,$rootScope,__env, dashboardService) {
     
     $scope.logout = function(){
     	$state.go('login');
-    }
+    };
     
     function loadAlerts() {
 		$scope.showLoader=true;
 		$scope.alerts = [];
         dashboardService.getAlerts(function(alerts){
         	$scope.showLoader=false;
-            $scope.alerts = alerts
+            $scope.alerts = alerts;
         });
 	};
 	
@@ -26,8 +26,9 @@ function mainCtrl($scope, $state,$rootScope,__env, dashboardService) {
         localStorage.setItem("alertBody", JSON.stringify(alert));
         $rootScope.$broadcast("EVENT");
         $state.go('home.profile');
-    }
+   };
     
-    loadAlerts();
+    /*Commented as it is not used*/
+    //loadAlerts();
      
 }

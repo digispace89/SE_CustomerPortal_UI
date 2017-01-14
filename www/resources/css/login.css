@@ -102,3 +102,11 @@
 	border-top-left-radius: 0;
 	border-top-right-radius: 0;
 }
+
+.leftText {
+	text-align:left!important;
+}
+
+.login_wrapper_custom{
+	max-width:450px!important;
+}

@@ -20,12 +20,6 @@ function newAccountCtrl($scope, $state,commonService, loginService) {
             id : '1',
             name : 'Pharmacy'
         },
-        /*
-        firstName: "Test",
-                lastName: "",
-                companyName : "Theta Accounting Corporation",
-                dob: new Date("2015-08-03"),*/
-        
 	};
 	
 	//This sets the default value of the select in the ui

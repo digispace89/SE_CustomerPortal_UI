@@ -5,22 +5,12 @@ if(window){
   Object.assign(env, window.__env);
 }
 
-var app = angular.module('demo', ['ui.router', 'commonUtils', 'pascalprecht.translate','ui.bootstrap','datatables']);
+var app = angular.module('demo', ['ui.router', 'commonUtils','ui.bootstrap','datatables']);
 
 // Register environment in AngularJS as constant
 app.constant('__env', env);
 
-app.config(function($stateProvider, $urlRouterProvider, $translateProvider) {
-	/**Translate Provider for localization i18n**/
-	$translateProvider.useStaticFilesLoader({
-		prefix : 'resources/locales/',
-		suffix : '.json'
-	}).registerAvailableLanguageKeys(['en'], {
-		//Add value for other locales if needed.  'en' : 'en'
-	}).preferredLanguage('en').fallbackLanguage('en').determinePreferredLanguage().useSanitizeValueStrategy('escapeParameters');
-
-
-
+app.config(function($stateProvider, $urlRouterProvider) {
 	$urlRouterProvider.otherwise('/login');
 
 	$stateProvider.state('login', {
