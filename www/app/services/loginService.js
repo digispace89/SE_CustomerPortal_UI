@@ -1,7 +1,7 @@
 /**
  * Login Service to authenticate user details.
  **/
-app.service("loginService", ['$state','$http','__env','commonService',function($state, $http, __env,commonService) {
+app.service("loginService", ['$http','__env','commonService',function($http, __env,commonService) {
 	this.getCustomerByEmail = function(username, password,cb){
 		var req = {
 			method: 'GET',
@@ -21,18 +21,6 @@ app.service("loginService", ['$state','$http','__env','commonService',function($
 			console.log("error");
 			cb(error);
 		});
-           
-			serverUsername = "test";
-			serverPassword = "test";
-			if(serverUsername === username && serverPassword === password) {
-				localStorage.setItem("loginstatus", JSON.stringify(true));
-				commonService.hideLoader();
-				$state.go('home.dashboard');
-			} else {
-				commonService.showErrorMessage();
-				commonService.hideLoader();
-			}
-		
 	};
 	
 }]);

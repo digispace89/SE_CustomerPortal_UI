@@ -1,27 +1,29 @@
-LoginCtrl.$inject = ['$scope', '$state','commonService', 'loginService'];
+LoginCtrl.$inject = ['$scope', '$state', 'commonService', 'loginService'];
 app.controller('LoginCtrl', LoginCtrl);
 
-function LoginCtrl($scope, $state,commonService, loginService) {
-	
+function LoginCtrl($scope, $state, commonService, loginService) {
+
 	$scope.Login = function() {
-			commonService.showLoader();
-			loginService.scope = $scope;
-			loginService.getCustomerByEmail($scope.data.email, $scope.data.password,function(cb) {
-			console.log("cb::"+cb);
-			/*
-			if( typeof cb.data != "undefined" && cb.data != "" && cb.data != null) {
-							var success = updateQuestionAnswers(cb.data);
-							if(!success) {
-								alert("no questions");
-							}
-						}
-						$scope.showLoader = false;*/
-			
+		$scope.showLoader = true;
+		loginService.scope = $scope;
+		loginService.getCustomerByEmail($scope.data.email, $scope.data.password, function(cb) {
+			if ( typeof cb != "undefined" && cb != "" && cb != null) {
+				console.log("cb::" + JSON.stringify(cb));
+				if(cb.password != $scope.data.password){
+					$scope.msg = "Invalid Password";
+				} else{
+					$state.go('home.dashboard');
+				}
+			}else if(cb.status==404){
+				$scope.msg = "Email Id does not exist";
+			}
+			$scope.showLoader = false;
+
 		});
-		
+
 	};
-	
-	$scope.createAccount = function (){
+
+	$scope.createAccount = function() {
 		$state.go('createAccount');
 	};
 
