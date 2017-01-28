@@ -1,5 +1,5 @@
 {
-  "name": "demo-ui",
+  "name": "customer_portal",
   "description": "",
   "main": "index.js",
   "license": "ISC",
@@ -19,8 +19,6 @@
     "angular-ui-router": "0.2.13",
     "bootstrap": "^3.3.7",
     "jquery": "^3.1.1",
-    "moment": "^2.17.0",
-    "restangular": "^1.5.2",
     "animate.css": "^3.5.2",
     "font-awesome": "^4.7.0",
     "datatables.net": "^1.10.11",

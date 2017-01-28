@@ -6,7 +6,18 @@ function LoginCtrl($scope, $state,commonService, loginService) {
 	$scope.Login = function() {
 			commonService.showLoader();
 			loginService.scope = $scope;
-			loginService.getAuthToken($scope.data.email, $scope.data.password);
+			loginService.getCustomerByEmail($scope.data.email, $scope.data.password,function(cb) {
+			console.log("cb::"+cb);
+			/*
+			if( typeof cb.data != "undefined" && cb.data != "" && cb.data != null) {
+							var success = updateQuestionAnswers(cb.data);
+							if(!success) {
+								alert("no questions");
+							}
+						}
+						$scope.showLoader = false;*/
+			
+		});
 		
 	};
 	

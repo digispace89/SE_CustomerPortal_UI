@@ -5,7 +5,7 @@
     //window.__env.apiUrl = 'http://192.168.99.100:8010'
 //    window.__env.apiUrl = 'http://192.168.1.113:3000';
 //    window.__env.apiUrl = 'http://192.168.8.102:3000';
-    window.__env.apiUrl = 'http://9.192.211.00:8010'
+    window.__env.apiUrl = 'http://9.192.211.00:8010';
 
     // Base url
     window.__env.baseUrl = '/';

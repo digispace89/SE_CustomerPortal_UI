@@ -5,7 +5,7 @@ if(window){
   Object.assign(env, window.__env);
 }
 
-var app = angular.module('demo', ['ui.router', 'commonUtils','ui.bootstrap','datatables']);
+var app = angular.module('customer_portal', ['ui.router', 'commonUtils','ui.bootstrap','datatables']);
 
 // Register environment in AngularJS as constant
 app.constant('__env', env);
@@ -35,18 +35,6 @@ app.config(function($stateProvider, $urlRouterProvider) {
 		url : '/dashboard',
 		templateUrl : 'app/views/dashboard/dashboard.html',
 		controller : 'dashboardCtrl',
-		cache : true
-	})
-	.state('home.customer', {
-		url : '/customer',
-		templateUrl : 'app/views/customer/newCustomer.html',
-		controller : 'customerCtrl',
-		cache : true
-	})
-	.state('home.profile', {
-		url : '/profile',
-		templateUrl : 'app/views/profile/customerProfile.html',
-		controller : 'profileCtrl',
 		cache : true
 	});
 });
